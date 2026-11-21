@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Elshab7 Kids Arcade | Play 5 Educational &amp; Arcade Games in Browser</title>
+  <meta name="description" content="Explore Smart Kids letters, numbers drawing and learning games plus playable browser demos for Fruvelia, Amber Forge, Solar Vanguard, and Veloce Prism.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><rect width='24' height='24' rx='6' fill='%234338CA'/><path d='M12 3l2.6 5.4 6 .8-4.3 4.2 1 6-5.3-2.8-5.3 2.8 1-6L3.4 9.2l6-.8z' fill='%23FDE047'/></svg>">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <a href="#main-content" class="skip-link visually-hidden">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#top" class="brand">
+        <span class="brand-badge" aria-hidden="true">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <path d="M12 2L14.9 8.6L22 9.3L16.6 14L18.2 21L12 17.3L5.8 21L7.4 14L2 9.3L9.1 8.6L12 2Z" fill="#FDE047"/>
+          </svg>
+        </span>
+        <span>Elshab7 Kids Arcade</span>
+      </a>
+
+      <nav aria-label="Primary">
+        <ul class="nav-links">
+          <li><a href="#smart-kids-lab">Smart Kids Lab</a></li>
+          <li><a href="#games-grid">All 5 Games</a></li>
+          <li><a href="#parents">For Parents</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-controls">
+        <button type="button" class="btn btn-outline" id="toggle-sound-btn">Mute Sound</button>
+        <button type="button" class="btn btn-outline" id="toggle-motion-btn">Pause Motion</button>
+        <button type="button" class="btn btn-outline" id="toggle-theme-btn">Dark Theme</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <canvas id="hero-canvas" aria-hidden="true"></canvas>
+      <div class="container hero-grid">
+        <div>
+          <span class="eyebrow">Play Right in Your Browser • Ages 3–12+</span>
+          <h1 id="main-content" tabindex="-1">Learn, Draw &amp; Play 5 Colorful Worlds!</h1>
+          <p class="hero-sub">
+            Hear Arabic and English phonics, trace glowing letters and numbers on screen, match glazed orchard fruits, break amber mosaics, fly solar starfighters, and aim crystal prism bounces—zero downloads needed to try!
+          </p>
+          <div class="hero-actions">
+            <button type="button" class="btn btn-primary" data-sk-jump="drawing">Draw Letters &amp; Numbers</button>
+            <button type="button" class="btn btn-emerald" data-open-game="fruvelia">Launch Arcade Demo</button>
+          </div>
+          <div class="quick-launch-row" role="group" aria-label="Quick launch playable simulators">
+            <button type="button" class="chip-btn" data-open-game="smart_kids">
+              <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="#4338CA"><circle cx="12" cy="12" r="10"/></svg>
+              <span>Smart Kids</span>
+            </button>
+            <button type="button" class="chip-btn" data-open-game="fruvelia">
+              <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="#BE123C"><circle cx="12" cy="12" r="10"/></svg>
+              <span>Fruvelia</span>
+            </button>
+            <button type="button" class="chip-btn" data-open-game="amberforge">
+              <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="#B45309"><rect x="3" y="3" width="18" height="18" rx="5"/></svg>
+              <span>Amber Forge</span>
+            </button>
+            <button type="button" class="chip-btn" data-open-game="solar_vanguard">
+              <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="#0369A1"><polygon points="12,2 22,20 12,16 2,20"/></svg>
+              <span>Solar Vanguard</span>
+            </button>
+            <button type="button" class="chip-btn" data-open-game="veloce_prism">
+              <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="#047857"><polygon points="12,2 21,12 12,22 3,12"/></svg>
+              <span>Veloce Prism</span>
+            </button>
+          </div>
+        </div>
+
+        <aside class="hero-mascot-stage" aria-label="Smart Kids featured worlds">
+          <div class="mascot-banner">
+            <div class="mascot-bob" aria-hidden="true">
+              <svg width="76" height="76" viewBox="0 0 80 80" fill="none">
+                <circle cx="40" cy="40" r="36" fill="#FDE047"/>
+                <circle cx="28" cy="35" r="5" fill="#1E1B4B"/>
+                <circle cx="52" cy="35" r="5" fill="#1E1B4B"/>
+                <circle cx="29" cy="33" r="1.8" fill="#FFFFFF"/>
+                <circle cx="53" cy="33" r="1.8" fill="#FFFFFF"/>
+                <path d="M27 49C31 56 49 56 53 49" stroke="#1E1B4B" stroke-width="4" stroke-linecap="round"/>
+                <path d="M24 20L40 8L56 20" stroke="#BE123C" stroke-width="6" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div>
+              <div style="font-weight:900;font-size:1.15rem;">Smart Kids Learning Hub</div>
+              <div style="font-size:.92rem;opacity:.92;">76 ad-free offline games in Arabic, English &amp; French</div>
+            </div>
+          </div>
+          <div class="mini-world-pills">
+            <div class="mini-pill">Arabic Harakat (أَ أُ إِ)</div>
+            <div class="mini-pill">Glowing Letter Tracing</div>
+            <div class="mini-pill">Numbers 1–20 &amp; Math</div>
+            <div class="mini-pill">Interactive Clock Academy</div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section" id="smart-kids-lab">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <h2>Smart Kids: Letters, Numbers Drawing &amp; Learning Studio</h2>
+            <p>Tap letters to hear Arabic Harakat and English phonics, trace glowing shapes with your finger or mouse, and solve friendly counting and clock challenges.</p>
+          </div>
+          <a class="btn btn-primary" href="https://play.google.com/store/apps/details?id=com.elshab7.smart_kids_game" target="_blank" rel="noopener noreferrer">Get Smart Kids on Google Play</a>
+        </div>
+        <div class="playground-card">
+          <div id="smart-kids-inline"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="games-grid">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <h2>Play All 5 Games in Your Browser</h2>
+            <p>Each interactive mini-game below simulates the real mechanics from our Google Play releases—click Play Demo to jump right in!</p>
+          </div>
+        </div>
+
+        <div class="games-grid">
+          <article class="game-card reveal-card">
+            <div class="game-card-top">
+              <div class="game-emblem" style="background:#EEF2FF;">
+                <svg role="img" aria-label="Smart Kids emblem" width="38" height="38" viewBox="0 0 40 40">
+                  <rect x="4" y="4" width="32" height="32" rx="10" fill="#4338CA"/>
+                  <text x="20" y="26" text-anchor="middle" fill="#FDE047" font-size="18" font-weight="900">Aأ</text>
+                </svg>
+              </div>
+              <div>
+                <span class="game-tag">100% Ad-Free • Ages 3–10</span>
+                <h3>Smart Kids: Learning Games</h3>
+              </div>
+            </div>
+            <p>76 offline educational mini-games across 6 worlds with trilingual Arabic, English, and French voices.</p>
+            <ul>
+              <li>Arabic letters with Harakat &amp; example words</li>
+              <li>2-level glowing letter &amp; number tracing</li>
+              <li>Counting orchard, math quiz &amp; clock academy</li>
+            </ul>
+            <div class="game-card-actions">
+              <button type="button" class="btn btn-primary" data-open-game="smart_kids">Play Drawing Demo</button>
+              <a class="btn btn-outline" href="https://play.google.com/store/apps/details?id=com.elshab7.smart_kids_game" target="_blank" rel="noopener noreferrer">Smart Kids on Google Play</a>
+            </div>
+          </article>
+
+          <article class="game-card reveal-card">
+            <div class="game-card-top">
+              <div class="game-emblem" style="background:#FFF1F2;">
+                <svg role="img" aria-label="Fruvelia Glaze Crown emblem" width="38" height="38" viewBox="0 0 40 40">
+                  <circle cx="20" cy="21" r="14" fill="#BE123C"/>
+                  <path d="M12 12L16 6L20 11L24 6L28 12Z" fill="#FDE047"/>
+                </svg>
+              </div>
+              <div>
+                <span class="game-tag">Match-3 Puzzle • 100 Stages</span>
+                <h3>Fruvelia: Glaze Crown</h3>
+              </div>
+            </div>
+            <p>Swap glossy orchard fruits on a 7×7 royal grid, shatter frost tiles, and trigger explosive fruit combos.</p>
+            <ul>
+              <li>Match 4 for Rockets &amp; 5 for Rainbow Bombs</li>
+              <li>Royal Lollipop Hammer booster in demo</li>
+              <li>Crisp particle bursts &amp; offline puzzle play</li>
+            </ul>
+            <div class="game-card-actions">
+              <button type="button" class="btn btn-primary" data-open-game="fruvelia">Play Match-3 Demo</button>
+              <a class="btn btn-outline" href="https://play.google.com/store/apps/details?id=com.elshab7.fruvelia" target="_blank" rel="noopener noreferrer">Fruvelia on Google Play</a>
+            </div>
+          </article>
+
+          <article class="game-card reveal-card">
+            <div class="game-card-top">
+              <div class="game-emblem" style="background:#FEF3C7;">
+                <svg role="img" aria-label="Amber Forge Shard Swarm emblem" width="38" height="38" viewBox="0 0 40 40">
+                  <rect x="4" y="8" width="32" height="10" rx="4" fill="#B45309"/>
+                  <circle cx="20" cy="28" r="6" fill="#F59E0B"/>
+                </svg>
+              </div>
+              <div>
+                <span class="game-tag">Brick Breaker • 40+ Stages</span>
+                <h3>Amber Forge: Shard Swarm</h3>
+              </div>
+            </div>
+            <p>Carve side tunnels through crystal walls to trigger BREACH ×2 surges and catch Tri-Swarm gift pods.</p>
+            <ul>
+              <li>Hover-Anvil paddle with banking physics</li>
+              <li>Detonator Crucibles &amp; multi-orb cascades</li>
+              <li>BREACH ×2 upper-cavity bonus multiplier</li>
+            </ul>
+            <div class="game-card-actions">
+              <button type="button" class="btn btn-primary" data-open-game="amberforge">Play Breaker Demo</button>
+              <a class="btn btn-outline" href="https://play.google.com/store/apps/details?id=com.elshab7.amberforge" target="_blank" rel="noopener noreferrer">Amber Forge on Google Play</a>
+            </div>
+          </article>
+
+          <article class="game-card reveal-card">
+            <div class="game-card-top">
+              <div class="game-emblem" style="background:#E0F2FE;">
+                <svg role="img" aria-label="Solar Vanguard Cyber Armada emblem" width="38" height="38" viewBox="0 0 40 40">
+                  <polygon points="20,4 34,34 20,27 6,34" fill="#0369A1"/>
+                  <circle cx="20" cy="20" r="4" fill="#FDE047"/>
+                </svg>
+              </div>
+              <div>
+                <span class="game-tag">Space Arcade • 100 Stages</span>
+                <h3>Solar Vanguard: Cyber Armada</h3>
+              </div>
+            </div>
+            <p>Pilot cybernetic starfighters across 20 sectors, collect spread-shot pods, and unleash Solar Nova waves.</p>
+            <ul>
+              <li>Smooth steering with auto-fire blasters</li>
+              <li>Combo Fever ×2 &amp; full-screen Solar Nova</li>
+              <li>Sector Boss Dreadnought waves</li>
+            </ul>
+            <div class="game-card-actions">
+              <button type="button" class="btn btn-primary" data-open-game="solar_vanguard">Play Starfighter Demo</button>
+              <a class="btn btn-outline" href="https://play.google.com/store/apps/details?id=com.elshab7.solar_vanguard" target="_blank" rel="noopener noreferrer">Solar Vanguard on Google Play</a>
+            </div>
+          </article>
+
+          <article class="game-card reveal-card">
+            <div class="game-card-top">
+              <div class="game-emblem" style="background:#ECFDF5;">
+                <svg role="img" aria-label="Veloce Prism Crystal Rush emblem" width="38" height="38" viewBox="0 0 40 40">
+                  <polygon points="20,4 36,20 20,36 4,20" fill="#047857"/>
+                  <line x1="12" y1="28" x2="28" y2="12" stroke="#FDE047" stroke-width="3"/>
+                </svg>
+              </div>
+              <div>
+                <span class="game-tag">Prism Puzzle • 120 Stages</span>
+                <h3>Veloce Prism: Crystal Rush</h3>
+              </div>
+            </div>
+            <p>Aim dual-ray bouncing shots to shatter numbered emerald, lime, and solar crystals with laser cascades.</p>
+            <ul>
+              <li>Live dual-ray wall reflection aim preview</li>
+              <li>+1 Sphere pickups &amp; horizontal Laser Nodes</li>
+              <li>Endless waves with instant Recall button</li>
+            </ul>
+            <div class="game-card-actions">
+              <button type="button" class="btn btn-primary" data-open-game="veloce_prism">Play Prism Demo</button>
+              <a class="btn btn-outline" href="https://play.google.com/store/apps/details?id=com.elshab7.veloce_prism" target="_blank" rel="noopener noreferrer">Veloce Prism on Google Play</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="parents">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <h2>Designed for Kids, Trusted by Parents</h2>
+            <p>Clean visuals, gentle feedback, full keyboard &amp; touch support, and zero confusing clutter.</p>
+          </div>
+        </div>
+        <div class="parents-grid">
+          <div class="trust-card">
+            <h3>Child-Safe Browser Demos</h3>
+            <p>Every interactive mini-game runs locally right inside the browser with zero external tracking, zero accounts, and instant reset controls.</p>
+          </div>
+          <div class="trust-card">
+            <h3>Motion &amp; Sound Controls</h3>
+            <p>Children or parents can mute sound or pause ambient hero motion anytime via one click, honoring system reduced-motion preferences.</p>
+          </div>
+          <div class="trust-card">
+            <h3>Full Apps on Google Play</h3>
+            <p>Smart Kids includes 76 ad-free offline learning adventures across Arabic, English, and French—plus 4 vibrant puzzle &amp; arcade titles.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <span>Elshab7 Studio • Educational &amp; Arcade Games</span>
+      <div class="footer-links">
+        <a href="https://play.google.com/store/apps/details?id=com.elshab7.smart_kids_game" target="_blank" rel="noopener noreferrer">Smart Kids</a>
+        <a href="https://play.google.com/store/apps/details?id=com.elshab7.fruvelia" target="_blank" rel="noopener noreferrer">Fruvelia</a>
+        <a href="https://play.google.com/store/apps/details?id=com.elshab7.amberforge" target="_blank" rel="noopener noreferrer">Amber Forge</a>
+        <a href="https://play.google.com/store/apps/details?id=com.elshab7.solar_vanguard" target="_blank" rel="noopener noreferrer">Solar Vanguard</a>
+        <a href="https://play.google.com/store/apps/details?id=com.elshab7.veloce_prism" target="_blank" rel="noopener noreferrer">Veloce Prism</a>
+        <a href="https://smart-kids-game.web.app/privacy-policy.html" target="_blank" rel="noopener noreferrer">Smart Kids Privacy Policy</a>
+      </div>
+    </div>
+  </footer>
+
+  <div id="sr-announcer" class="visually-hidden" aria-live="polite" aria-atomic="true"></div>
+
+  <dialog id="arcade-dialog" closedby="any" aria-labelledby="arcade-modal-title">
+    <div class="modal-header">
+      <div class="modal-title-group">
+        <h2 id="arcade-modal-title" tabindex="-1">Play Game</h2>
+      </div>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;">
+        <a id="arcade-store-link" class="btn btn-emerald" href="https://play.google.com/store/apps/details?id=com.elshab7.smart_kids_game" target="_blank" rel="noopener noreferrer">Get on Google Play</a>
+        <button type="button" class="btn btn-outline" id="arcade-close-btn">Close</button>
+      </div>
+    </div>
+    <div class="modal-switcher" role="group" aria-label="Switch playable browser game">
+      <button type="button" class="btn btn-outline" data-switch-game="smart_kids">Smart Kids</button>
+      <button type="button" class="btn btn-outline" data-switch-game="fruvelia">Fruvelia</button>
+      <button type="button" class="btn btn-outline" data-switch-game="amberforge">Amber Forge</button>
+      <button type="button" class="btn btn-outline" data-switch-game="solar_vanguard">Solar Vanguard</button>
+      <button type="button" class="btn btn-outline" data-switch-game="veloce_prism">Veloce Prism</button>
+    </div>
+    <div class="modal-stage" id="arcade-stage"></div>
+    <div id="modal-announcer" class="visually-hidden" aria-live="polite" aria-atomic="true"></div>
+  </dialog>
+
+  <script type="module" src="./js/app.js"></script>
+</body>
+</html>
